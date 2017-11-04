@@ -1,19 +1,12 @@
 package com.leonardogonzalez.lista;
 
-import android.app.Fragment;
 import android.app.FragmentManager;
+import android.app.FragmentTransaction;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.support.v7.widget.GridLayoutManager;
-import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
-import android.util.Log;
-import android.view.View;
-import android.widget.AdapterView;
-import android.widget.ArrayAdapter;
 import android.widget.FrameLayout;
 import android.widget.ListView;
-import android.widget.TextView;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -22,24 +15,15 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.container);
+        setContentView(R.layout.main_layout);
 
-        FrameLayout frameLayout=(FrameLayout) findViewById(R.id.container);
         MyFragment myFragment=new MyFragment();
         FragmentManager fragmentManager=getFragmentManager();
-        fragmentManager.beginTransaction().replace(R.id.container,myFragment).commit();
+        FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
+        fragmentTransaction.add(R.id.container, myFragment);
+        fragmentTransaction.commit();
 
-        //lista=(ListView) findViewById(R.id.lista);
 
-//        ArrayAdapter<String> adapter=new ArrayAdapter(this,android.R.layout.simple_list_item_1,items);
-//        lista.setAdapter(adapter);
-//
-//        lista.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-//            @Override
-//            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-//                Log.e("lista",(((TextView)view).getText().toString()));
-//            }
-//        });
 
 
     }

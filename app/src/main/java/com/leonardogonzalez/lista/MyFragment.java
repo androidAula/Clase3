@@ -21,7 +21,7 @@ public class MyFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         String[] items={"amarillo", "azul","rojo","verde"};
          super.onCreateView(inflater, container, savedInstanceState);
-       View view=inflater.inflate(R.layout.activity_main,container,false);
+       View view=inflater.inflate(R.layout.fragmento_recicler,container,false);
         recyclerView=(RecyclerView) view.findViewById(R.id.reciclerView);
         recyclerView.setHasFixedSize(true);
 
